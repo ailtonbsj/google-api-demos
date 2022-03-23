@@ -1,11 +1,12 @@
 <?php
 require __DIR__ . '/vendor/autoload.php';
 
-$id_calendar = 'exemplo@gmail.com';
+$id_calendar = 'yourcalendar@gmail.com';
 $summary = 'MEU EVENTO';
+$location = 'LOCAL';
 $description = 'DESCRIÇÃO';
-$datetime_start = new DateTime('2022-03-10 09:00:00');
-$time_end = new DateTime('2022-03-10 12:00:00');
+$datetime_start = new DateTime('2022-03-23 09:00:00');
+$time_end = new DateTime('2022-03-23 12:00:00');
 
 $msg = '';
 $id_event = '';
@@ -38,6 +39,7 @@ try {
     $event = new Google_Service_Calendar_Event();
     $event->setSummary($summary);
     $event->setDescription($description);
+    $event->setLocation($location);
 
     $start = new Google_Service_Calendar_EventDateTime();
     $start->setDateTime($time_start);
